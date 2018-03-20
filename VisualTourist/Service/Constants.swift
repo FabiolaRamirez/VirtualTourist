@@ -17,4 +17,10 @@ struct Constants {
     static let Format = "json"
     static let Range = 15
     
+    
+    static let Id = "id"
+    static let Secret = "secret"
+    static let Server = "server"
+    static let Farm = "farm"
+    
 }

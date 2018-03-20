@@ -39,10 +39,10 @@ class Service {
                 for photo in photos {
                     
                     if let pictureFlick = photo as? [String:Any],
-                        let id = pictureFlick["id"] as? String,
-                        let secret = pictureFlick["secret"] as? String,
-                        let server = pictureFlick["server"] as? String,
-                        let farm = pictureFlick["farm"] as? Int {
+                        let id = pictureFlick[Constants.Id] as? String,
+                        let secret = pictureFlick[Constants.Secret] as? String,
+                        let server = pictureFlick[Constants.Server] as? String,
+                        let farm = pictureFlick[Constants.Farm] as? Int {
                         let picture = Picture(id: id, secret: secret, server: server, farm: farm)
                         pictures.append(picture)
                     }

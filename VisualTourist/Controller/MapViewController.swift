@@ -38,10 +38,6 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     func setRightBarButtonItem() {
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         messageView.isHidden = true
@@ -89,7 +85,7 @@ class MapViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func TapGestureRecognized(_ sender: UILongPressGestureRecognizer) {
         if gestureBegin {
-            let gestureRecognizer = sender as! UILongPressGestureRecognizer
+            let gestureRecognizer = sender
             let gestureTouchLocation = gestureRecognizer.location(in: mapView)
             addAnnotationToMap(fromPoint: gestureTouchLocation)
             gestureBegin = false

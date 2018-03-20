@@ -14,8 +14,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    
-    //Get Photos
+    // MARK: - Get Photos
     func initWithPhoto(_ photo: Photo) {
         
         if photo.data != nil {
@@ -29,7 +28,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    //Download Images
+    
+    // MARK: - Download Images
     func downloadImage(_ photo: Photo) {
         URLSession.shared.dataTask(with: URL(string: photo.url!)!) { (data, response, error) in
             if error == nil {
@@ -44,7 +44,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             .resume()
     }
     
-    //Save Images
+    
+    // MARK: - Save Images
     func saveImageDataToCoreData(photo: Photo, data: NSData) {
         do {
             photo.data = data
